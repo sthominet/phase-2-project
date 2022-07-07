@@ -21,7 +21,7 @@ function BreedImage () {
 
     return (
       <div className="image-container">
-        <img className="image-card" src={{breed}} />
+        <img className="image-card" src={{imageUrl}} />
       </div>
     );
   
