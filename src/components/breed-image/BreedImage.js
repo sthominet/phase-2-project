@@ -3,22 +3,26 @@ import './breed-image.css';
 
 function BreedImage () {
     const [breed, selectedBreed] = useState('');
+    const [url, setUrl] = useState('');
 
     useEffect(() => {
-        fetchImage();
-        }, []);
+        fetchImage(); dogPicker();
+    }, [breed]);
+
+    const dogPicker = (breed) => {selectedBreed(breed)};
 
     const fetchImage = async () => {
         const res = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
         const data = await res.json();
-        const imageUrl = data.message
-        selectedBreed(imageUrl);
-        };
+        setUrl(data.message);
+    };
 
     return (
+
       <div className="image-container">
-        <img className="image-card" src={breed} alt="doggopicture" />
+        <img className="image-card" src={url} alt="doggopicture" />
       </div>
+    
     );
   
 }

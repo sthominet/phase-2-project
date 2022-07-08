@@ -2,7 +2,7 @@ import React from 'react';
 import './select.css';
 
 const Select = (props) => {
-    
+
     const handleChange = (e) => {
         props.onSelect(e.target.value)
     }
@@ -10,7 +10,7 @@ const Select = (props) => {
         return <div className="loading"><img className="loading-gif" alt="Loading..." src={require('../../assets/loading.gif')}/></div>
     }
     const getErrorView = () => {
-        return alert('Sorry, the data cannot be displayed.')
+        return alert('Sorry, the data cannot be displayed')
     }
     const getSelectView = () => {
         return (
